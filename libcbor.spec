@@ -5,13 +5,13 @@
 Summary:	CBOR protocol implementation
 Summary(pl.UTF-8):	Implementacja protokołu CBOR
 Name:		libcbor
-Version:	0.5.0
+Version:	0.6.1
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://github.com/PJK/libcbor/releases
 Source0:	https://github.com/PJK/libcbor/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	801a17e95592b39beecb2406604f5ba3
+# Source0-md5:	f00586e3b4c0829366bd761cab3e7bb5
 URL:		http://libcbor.org/
 BuildRequires:	cmake >= 3.2
 %if %{with apidocs}
@@ -45,7 +45,7 @@ Pliki nagłówkowe biblioteki libcbor.
 Summary:	API documentation for libcbor library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libcbor
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
+%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
 %endif
 
@@ -89,7 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.md LICENSE.md README.md
 %attr(755,root,root) %{_libdir}/libcbor.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0
+%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0.6
 
 %files devel
 %defattr(644,root,root,755)
