@@ -45,9 +45,7 @@ Pliki nagłówkowe biblioteki libcbor.
 Summary:	API documentation for libcbor library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libcbor
 Group:		Documentation
-%if "%{_rpmversion}" >= "4.6"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for libcbor library.
