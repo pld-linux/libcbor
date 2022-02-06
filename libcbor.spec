@@ -5,17 +5,18 @@
 Summary:	CBOR protocol implementation
 Summary(pl.UTF-8):	Implementacja protokołu CBOR
 Name:		libcbor
-Version:	0.6.1
+Version:	0.9.0
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://github.com/PJK/libcbor/releases
 Source0:	https://github.com/PJK/libcbor/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	f00586e3b4c0829366bd761cab3e7bb5
+# Source0-md5:	265643416bedb4fa33a1937501dae36a
 URL:		http://libcbor.org/
 BuildRequires:	cmake >= 3.2
 %if %{with apidocs}
 BuildRequires:	python3-breathe
+BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -87,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.md LICENSE.md README.md
 %attr(755,root,root) %{_libdir}/libcbor.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0.6
+%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0.9
 
 %files devel
 %defattr(644,root,root,755)
@@ -99,5 +100,5 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
-%doc doc/build/html/{_images,_static,api,streaming,*.html,*.js}
+%doc doc/build/html/{_static,api,*.html,*.js}
 %endif
