@@ -1,17 +1,17 @@
 #
 # Conditional build:
-%bcond_without	apidocs		# do not build and package API docs
+%bcond_without	apidocs		# (Sphinx based) API documentation
 #
 Summary:	CBOR protocol implementation
 Summary(pl.UTF-8):	Implementacja protokołu CBOR
 Name:		libcbor
-Version:	0.9.0
+Version:	0.10.2
 Release:	1
 License:	MIT
 Group:		Libraries
 #Source0Download: https://github.com/PJK/libcbor/releases
 Source0:	https://github.com/PJK/libcbor/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	265643416bedb4fa33a1937501dae36a
+# Source0-md5:	da3a6a64614678b4f67eced25f52c53b
 URL:		http://libcbor.org/
 BuildRequires:	cmake >= 3.2
 %if %{with apidocs}
@@ -88,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGELOG.md LICENSE.md README.md
 %attr(755,root,root) %{_libdir}/libcbor.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0.9
+%attr(755,root,root) %ghost %{_libdir}/libcbor.so.0.10
 
 %files devel
 %defattr(644,root,root,755)
